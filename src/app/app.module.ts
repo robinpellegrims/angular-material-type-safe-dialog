@@ -1,25 +1,19 @@
-import {NgModule} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-
-import {MaterialExampleModule} from '../material.module';
-import {DialogDataExample, DialogDataExampleDialog} from './dialog-data-example';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {MatNativeDateModule} from '@angular/material/core';
-import {HttpClientModule} from '@angular/common/http';
+import { NgModule } from "@angular/core";
+import { AppComponent } from "src/app/app.component";
+import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { MatButtonModule } from "@angular/material/button";
+import { MatDialogModule } from "@angular/material/dialog";
+import { DialogComponent } from "src/app/dialog.component";
 
 @NgModule({
-  declarations: [DialogDataExample, DialogDataExampleDialog],
+  declarations: [AppComponent, DialogComponent],
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
-    FormsModule,
-    HttpClientModule,
-    MatNativeDateModule,
-    MaterialExampleModule,
-    ReactiveFormsModule,
+    MatButtonModule,
+    MatDialogModule,
   ],
-  providers: [],
-  bootstrap: [DialogDataExample],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
