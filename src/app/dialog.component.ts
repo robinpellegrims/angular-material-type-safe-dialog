@@ -22,7 +22,7 @@ export interface DialogData {
 export class DialogComponent {
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: DialogData,
-    public dialogRef: MatDialogRef<DialogComponent>
+    public dialogRef: MatDialogRef<DialogComponent, boolean>
   ) {}
 
   cancelClick = () => this.dialogRef.close(false);

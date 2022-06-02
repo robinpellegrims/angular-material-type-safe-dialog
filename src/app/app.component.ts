@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { MatDialog } from "@angular/material/dialog";
 import { tap } from "rxjs";
-import { DialogComponent } from "./dialog.component";
+import { DialogComponent, DialogData } from "./dialog.component";
 
 @Component({
   selector: "app-component",
@@ -12,9 +12,11 @@ export class AppComponent {
 
   openDialog() {
     this.dialog
-      .open(DialogComponent, { data: { animal: "panda" } })
+      .open<DialogComponent, DialogData, boolean>(DialogComponent, {
+        data: { animal: "panda" },
+      })
       .afterClosed()
-      .pipe(tap((result) => console.log(result === true)))
+      .pipe(tap((result) => console.log(result === true))) // result: boolean | undefined
       .subscribe();
   }
 }
