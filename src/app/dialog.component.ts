@@ -1,7 +1,7 @@
-import { Component, Inject } from "@angular/core";
-import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
+import { Component } from "@angular/core";
+import { StronglyTypedDialog } from "src/app/dialog.service";
 
-export interface DialogData {
+interface DialogData {
   animal: string;
 }
 
@@ -19,12 +19,7 @@ export interface DialogData {
     </mat-dialog-actions>
   `,
 })
-export class DialogComponent {
-  constructor(
-    @Inject(MAT_DIALOG_DATA) public data: DialogData,
-    public dialogRef: MatDialogRef<DialogComponent, boolean>
-  ) {}
-
+export class DialogComponent extends StronglyTypedDialog<DialogData, boolean> {
   cancelClick = () => this.dialogRef.close(false);
   okClick = () => this.dialogRef.close(true);
 }
