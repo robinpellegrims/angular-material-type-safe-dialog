@@ -1,3 +1,3 @@
-# angular-uqqfbm-inuvje
+# Angular Material Type-Safe Dialog example
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/angular-uqqfbm-inuvje)
+Blog article on https://pellegrims.dev/blog/ng-material-dialog-type-safety/
