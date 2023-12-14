@@ -18,7 +18,7 @@
  * BROWSER POLYFILLS
  */
 
-import 'zone.js';
+import "zone.js";
 
 /***************************************************************************************************
  * APPLICATION IMPORTS
