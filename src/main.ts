@@ -1,10 +1,14 @@
 import {VERSION as CDK_VERSION} from '@angular/cdk';
 import {VERSION as MAT_VERSION} from '@angular/material/core';
-import {enableProdMode} from '@angular/core';
+import { enableProdMode, importProvidersFrom } from '@angular/core';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 
-import {AppModule} from './app/app.module';
+
 import {environment} from './environments/environment';
+import { AppComponent } from './app/app.component';
+import { MatButtonModule } from '@angular/material/button';
+import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 if (environment.production) {
   enableProdMode();
@@ -14,5 +18,10 @@ if (environment.production) {
 console.info('Angular CDK version', CDK_VERSION.full);
 console.info('Angular Material version', MAT_VERSION.full);
 
-platformBrowserDynamic().bootstrapModule(AppModule)
+bootstrapApplication(AppComponent, {
+    providers: [
+        importProvidersFrom(BrowserModule, MatButtonModule),
+        provideAnimations()
+    ]
+})
   .catch(err => console.error(err));
