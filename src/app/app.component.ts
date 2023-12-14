@@ -13,7 +13,7 @@ import { MatButtonModule } from "@angular/material/button";
 export class AppComponent {
   private dialog = inject(DialogService);
 
-  openDialog() {
+  protected openDialog() {
     this.dialog
       .open(DialogComponent, { data: { animal: "panda" } })
       .afterClosed()

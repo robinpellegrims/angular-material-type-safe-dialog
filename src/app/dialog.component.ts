@@ -33,6 +33,6 @@ interface DialogData {
   standalone: true,
 })
 export class DialogComponent extends StronglyTypedDialog<DialogData, boolean> {
-  cancelClick = () => this.dialogRef.close(false);
-  okClick = () => this.dialogRef.close(true);
+  protected cancelClick = () => this.dialogRef.close(false);
+  protected okClick = () => this.dialogRef.close(true);
 }
