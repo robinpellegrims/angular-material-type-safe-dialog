@@ -1,4 +1,4 @@
-import { Directive, Inject, Injectable, inject } from "@angular/core";
+import { Directive, Inject, Injectable, inject, Type } from "@angular/core";
 import {
   MAT_DIALOG_DATA,
   MatDialog,
@@ -21,7 +21,7 @@ export class DialogService {
   protected dialog = inject(MatDialog);
 
   open = <DialogData, DialogResult>(
-    component: ComponentType<StronglyTypedDialog<DialogData, DialogResult>>,
+    component: Type<StronglyTypedDialog<DialogData, DialogResult>>,
     config?: MatDialogConfig<DialogData>
   ): MatDialogRef<
     StronglyTypedDialog<DialogData, DialogResult>,
